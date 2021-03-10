@@ -1,0 +1,116 @@
+/* Les variables de couleur */
+
+// Dans Sass , lorsque tu commente en utilisant les deux barres,//
+//ton commentaire ne sera pas visible dans ton fichier CSS//
+
+$tumbleweed: #F1AB86;
+$ebony: #636B61;
+$yellowgreen: #A2D729;
+$pumpkin: #FA824C;
+$frenchlilac: #885A89;
+
+a {
+  text-decoration: none; /* Les liens ne seront plus soulignés */
+  color: $yellowgreen;
+  font-size:14px;
+
+  &:hover { // & met le sélecteur juste avant//
+
+  background-color: $pumpkin;
+}
+
+&:visited /* Quand le visiteur clique sur le lien */ {
+  background-color: $frenchlilac;
+}
+}
+
+
+
+@mixin titre-cover {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/30/Mur%C3%A8ne.jpg');
+
+}
+
+@mixin color-title {
+  color: $yellowgreen;
+
+}
+
+
+.titre {
+  @include color-title;
+
+}
+
+h1 {
+  @include titre-cover;
+}
+
+@mixin body-color {
+  background-color: $ebony;
+}
+
+.corps {
+@include body-color;
+
+.partie {
+
+  @extend .corps;
+}
+}
+
+/* exemple pour les <li> :
+
+.table {
+   width: 100;
+
+   td {
+   border: 1px solid lime;
+ }
+
+ thead {
+ background: pink;
+ color: black;
+}
+
+th {
+background: grey;
+}
+}
+*/
+
+
+/* La directive @extend de Sass permet à un sélecteur d’hériter
+ des styles d’un autre. C’est particulièrement utile dans une
+ architecture basée sur les composants, en nous permettant de faire
+ des variations à partir d’un composant.
+
+ Ex :
+
+ .message {
+padding: .5em;
+}
+.message-error {
+@extend .message;
+}
+
+Extension Multiples > Ex :
+
+.message {
+padding: .5em;
+}
+
+.important {
+font-weight: bold;
+}
+
+.message-error {
+@extend .message, .important;
+}
+
+
+Note en + de JP :
+
+>Mettre script à la fin du body dans html pour avoir
+le temps de charger le html + css<
+*/

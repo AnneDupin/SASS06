@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* Les variables de couleur */
+a {
+  text-decoration: none;
+  /* Les liens ne seront plus soulignés */
+  color: #A2D729;
+  font-size: 14px; }
+  a:hover {
+    background-color: #FA824C; }
+  a:visited {
+    background-color: #885A89; }
+
+.titre {
+  color: #A2D729; }
+
+h1 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/30/Mur%C3%A8ne.jpg"); }
+
+.corps, .corps .partie {
+  background-color: #636B61; }
+
+/* exemple pour les <li> :
+
+.table {
+   width: 100;
+
+   td {
+   border: 1px solid lime;
+ }
+
+ thead {
+ background: pink;
+ color: black;
+}
+
+th {
+background: grey;
+}
+}
+*/
+/* La directive @extend de Sass permet à un sélecteur d’hériter
+ des styles d’un autre. C’est particulièrement utile dans une
+ architecture basée sur les composants, en nous permettant de faire
+ des variations à partir d’un composant.
+
+ Ex :
+
+ .message {
+padding: .5em;
+}
+.message-error {
+@extend .message;
+}
+
+Extension Multiples > Ex :
+
+.message {
+padding: .5em;
+}
+
+.important {
+font-weight: bold;
+}
+
+.message-error {
+@extend .message, .important;
+}
+
+
+Note en + de JP :
+
+>Mettre script à la fin du body dans html pour avoir
+le temps de charger le html + css<
+*/
